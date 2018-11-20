@@ -18,11 +18,11 @@
       "dom"
     ],
     "paths": {
-      "alurapic-core": [
-        "dist/alurapic-core"
+      "alurapic-domain": [
+        "dist/alurapic-domain"
       ],
-      "alurapic-core/*": [
-        "dist/alurapic-core/*"
+      "alurapic-domain/*": [
+        "dist/alurapic-domain/*"
       ],
       "alurapic-infra": [
         "dist/alurapic-infra"

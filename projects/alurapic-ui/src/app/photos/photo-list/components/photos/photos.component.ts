@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Photo } from 'alurapic-core';
+import { Photo } from 'alurapic-domain';
 
 @Component({
   selector: 'ap-photos',

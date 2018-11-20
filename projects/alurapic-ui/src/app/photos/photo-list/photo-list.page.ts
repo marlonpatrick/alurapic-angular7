@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ListPhotosFromUserQuery, Photo } from 'alurapic-core';
+import { ListPhotosFromUserQuery, Photo } from 'alurapic-domain';
 
 @Component({
   selector: 'ap-photo-list',

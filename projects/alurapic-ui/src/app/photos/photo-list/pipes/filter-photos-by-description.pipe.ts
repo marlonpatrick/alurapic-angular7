@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Photo } from 'alurapic-core';
+import { Photo } from 'alurapic-domain';
 
 @Pipe({
   name: 'filterPhotosByDescription'

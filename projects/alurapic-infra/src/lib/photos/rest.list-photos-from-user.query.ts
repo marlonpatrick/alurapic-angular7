@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ListPhotosFromUserQuery, Photo } from 'alurapic-core';
+import { ListPhotosFromUserQuery, Photo } from 'alurapic-domain';
 import { Observable } from 'rxjs';
 
 const API_BASE_URL = 'http://localhost:3000';

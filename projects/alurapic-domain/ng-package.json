@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/alurapic-core",
+  "dest": "../../dist/alurapic-domain",
   "lib": {
     "entryFile": "src/public_api.ts"
   }

@@ -3,33 +3,33 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "alurapic-core": {
-      "root": "projects/alurapic-core",
-      "sourceRoot": "projects/alurapic-core/src",
+    "alurapic-domain": {
+      "root": "projects/alurapic-domain",
+      "sourceRoot": "projects/alurapic-domain/src",
       "projectType": "library",
       "prefix": "ap-core",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/alurapic-core/tsconfig.lib.json",
-            "project": "projects/alurapic-core/ng-package.json"
+            "tsConfig": "projects/alurapic-domain/tsconfig.lib.json",
+            "project": "projects/alurapic-domain/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/alurapic-core/src/test.ts",
-            "tsConfig": "projects/alurapic-core/tsconfig.spec.json",
-            "karmaConfig": "projects/alurapic-core/karma.conf.js"
+            "main": "projects/alurapic-domain/src/test.ts",
+            "tsConfig": "projects/alurapic-domain/tsconfig.spec.json",
+            "karmaConfig": "projects/alurapic-domain/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/alurapic-core/tsconfig.lib.json",
-              "projects/alurapic-core/tsconfig.spec.json"
+              "projects/alurapic-domain/tsconfig.lib.json",
+              "projects/alurapic-domain/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

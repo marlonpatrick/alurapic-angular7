@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ListPhotosFromUserQuery } from 'alurapic-core';
+import { ListPhotosFromUserQuery } from 'alurapic-domain';
 import { RestListPhotosFromUserQuery } from './rest.list-photos-from-user.query';
 
 
