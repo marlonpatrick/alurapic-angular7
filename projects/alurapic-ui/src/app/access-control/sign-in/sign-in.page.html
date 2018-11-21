@@ -1,0 +1,31 @@
+<h4 class="text-center">Login</h4>
+
+<form [formGroup]="loginForm" class="form mt-4" (submit)="login()">
+
+    <div class="form-group">
+        <input #userNameInput
+            formControlName="userName"
+            class="form-control" 
+            placeholder="user name" 
+            autofocus/> 
+        <ap-val-msg *ngIf="loginForm.hasError('required', 'userName')" text="User name is required."></ap-val-msg>
+    </div>
+
+    <div class="form-group">
+        <input formControlName="password"
+            type="password" 
+            class="form-control" 
+            placeholder="password"/>              
+        <ap-val-msg *ngIf="loginForm.hasError('required', 'password')" text="Password is required."></ap-val-msg>
+    </div>
+
+    <button 
+        [disabled]="loginForm.invalid"
+        type="submit" 
+        class="btn btn-primary btn-block">
+        Login
+    </button>
+
+</form>
+
+<p>Not a user? <a>Register now</a></p>
