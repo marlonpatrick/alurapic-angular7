@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { LoginProcessor } from 'alurapic-domain';
+import { LoginProcessor, TokenService } from 'alurapic-domain';
+import { LocalStorageTokenService } from './local-storage-token.service';
 import { RestLoginProcessor } from './rest-login.processor';
 
 
@@ -10,7 +11,8 @@ import { RestLoginProcessor } from './rest-login.processor';
     HttpClientModule
   ],
   providers: [
-    { provide: LoginProcessor, useClass: RestLoginProcessor }
+    { provide: LoginProcessor, useClass: RestLoginProcessor },
+    { provide: TokenService, useClass: LocalStorageTokenService }
   ],
   exports: []
 })
