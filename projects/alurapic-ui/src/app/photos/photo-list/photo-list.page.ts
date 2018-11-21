@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ListPhotosFromUserQuery, Photo } from 'alurapic-domain';
 
 @Component({
-  selector: 'ap-photo-list',
   templateUrl: './photo-list.page.html',
   styleUrls: ['./photo-list.page.scss']
 })

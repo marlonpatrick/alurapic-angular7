@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SignInModule } from './access-control/sign-in/sign-in.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ErrorsModule } from './errors/errors.module';
 import { PhotosModule } from './photos/photos.module';
-import { SearchComponent } from './shared/components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,8 @@ import { SearchComponent } from './shared/components/search/search.component';
     BrowserModule,
     AppRoutingModule,
     ErrorsModule,
-    PhotosModule
+    PhotosModule,
+    SignInModule
   ],
   providers: [],
   bootstrap: [AppComponent]
