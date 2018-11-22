@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggedInUserService, User } from 'alurapic-domain';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ap-header',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  userObservable: Observable<User>;
+
+  constructor(loggedInUserService: LoggedInUserService) {
+    this.userObservable = loggedInUserService.getUser();
+  }
 
   ngOnInit() {
   }
