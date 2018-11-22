@@ -6,7 +6,7 @@ const TOKEN_KEY = 'authToken';
 @Injectable({
   providedIn: 'root'
 })
-export class LocalStorageTokenService extends TokenService {
+export class LocalStorageTokenService  extends TokenService {
 
   getToken() {
     return window.localStorage.getItem(TOKEN_KEY);
@@ -14,10 +14,6 @@ export class LocalStorageTokenService extends TokenService {
 
   setToken(token: string) {
     window.localStorage.setItem(TOKEN_KEY, token);
-  }
-
-  hasToken() {
-    return !!this.getToken();
   }
 
   removeToken() {

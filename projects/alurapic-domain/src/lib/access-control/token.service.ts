@@ -5,7 +5,9 @@ export abstract class TokenService {
 
   abstract setToken(token: string): void;
 
-  abstract hasToken(): boolean;
-
   abstract removeToken(): void;
+
+  hasToken() {
+    return !!this.getToken();
+  }
 }
