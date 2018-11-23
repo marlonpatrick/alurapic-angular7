@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { userNameValidator } from './validators/user-name.validator';
+import { UserNameTakenAsyncValidator } from './validators/user-name-taken.async.validator';
 
 @Component({
   templateUrl: './sign-up.page.html',
@@ -10,9 +11,11 @@ export class SignUpPage implements OnInit {
 
   pageForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private userNameTakenAsyncValidator: UserNameTakenAsyncValidator) { }
 
   ngOnInit() {
+
     this.pageForm = this.formBuilder.group({
       email: ['',
         [
@@ -33,7 +36,8 @@ export class SignUpPage implements OnInit {
           Validators.minLength(2),
           Validators.maxLength(30),
           userNameValidator
-        ]
+        ],
+        this.userNameTakenAsyncValidator.checkUserNameTaken()
       ],
       password: ['',
         [
