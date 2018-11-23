@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { LoginProcessor } from './login.processor';
 import { LoggedInUserService } from './logged-in-user.service';
+import { LoginProcessor } from './login.processor';
 
 
 @Injectable()
@@ -12,6 +12,13 @@ export class LoginUseCase {
 
   execute(userName: string, password: string): Observable<Object> {
 
+    this.validate(userName, password);
+
+    return this.loginProcessor.execute(userName, password).pipe<string>(tap(token => this.loggedInUserService.setToken(token)));
+  }
+
+  private validate(userName: string, password: string) {
+
     if (userName == null || userName.trim().length <= 0) {
       return throwError('User name can\'t be empty.');
     }
@@ -19,7 +26,5 @@ export class LoginUseCase {
     if (password == null || password.trim().length <= 0) {
       return throwError('Password can\'t be empty.');
     }
-
-    return this.loginProcessor.execute(userName, password).pipe<string>(tap(token => this.loggedInUserService.setToken(token)));
   }
 }

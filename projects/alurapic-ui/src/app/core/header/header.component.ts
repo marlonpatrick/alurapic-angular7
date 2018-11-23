@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoggedInUserService, User } from 'alurapic-domain';
+import { Router } from '@angular/router';
+import { LoggedInUserService, LogoutUseCase, User } from 'alurapic-domain';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -11,11 +12,18 @@ export class HeaderComponent implements OnInit {
 
   userObservable: Observable<User>;
 
-  constructor(loggedInUserService: LoggedInUserService) {
+  constructor(loggedInUserService: LoggedInUserService,
+    private logoutUseCase: LogoutUseCase,
+    private router: Router) {
+
     this.userObservable = loggedInUserService.getUser();
   }
 
   ngOnInit() {
   }
 
+  logout() {
+    this.logoutUseCase.execute();
+    this.router.navigate(['']);
+  }
 }
