@@ -24,7 +24,7 @@
         <ap-val-msg *ngIf="pageForm.hasError('minlength', 'password')" text="Minimum length is 6."></ap-val-msg>
         <ap-val-msg *ngIf="pageForm.hasError('maxlength', 'password')" text="Maximum length is 16."></ap-val-msg>
     </div>
-    <button class="btn btn-primary btn-block">Register</button>
+    <button [disabled]="pageForm.invalid" class="btn btn-primary btn-block">Register</button>
 
     <p>Already a user?      
         <a [routerLink]="['']"> Sign In!</a>
