@@ -11,6 +11,9 @@ export class SignOutUseCase {
   constructor(private loggedInUserService: SignedInUserService) { }
 
   execute() {
+
+    // perform some business logic / validation
+
     this.loggedInUserService.removeToken();
   }
 }

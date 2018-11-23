@@ -12,7 +12,7 @@ export class SignUpUseCase {
 
   execute(newUser: NewUser): Observable<Object> {
 
-    // perform some business validation
+    // perform some business logic / validation
 
     return this.signUpProcessor.execute(newUser);
   }

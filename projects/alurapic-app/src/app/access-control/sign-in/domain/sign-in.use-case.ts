@@ -12,7 +12,7 @@ export class SignInUseCase {
 
   execute(userName: string, password: string): Observable<Object> {
 
-    // perform some business validation
+    // perform some business logic / validation
 
     return this.signInProcessor.execute(userName, password).pipe<string>(tap(token => this.loggedInUserService.setToken(token)));
   }
