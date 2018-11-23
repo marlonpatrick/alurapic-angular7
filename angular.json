@@ -3,79 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "alurapic-domain": {
-      "root": "projects/alurapic-domain",
-      "sourceRoot": "projects/alurapic-domain/src",
-      "projectType": "library",
-      "prefix": "ap-core",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/alurapic-domain/tsconfig.lib.json",
-            "project": "projects/alurapic-domain/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/alurapic-domain/src/test.ts",
-            "tsConfig": "projects/alurapic-domain/tsconfig.spec.json",
-            "karmaConfig": "projects/alurapic-domain/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/alurapic-domain/tsconfig.lib.json",
-              "projects/alurapic-domain/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "alurapic-infra": {
-      "root": "projects/alurapic-infra",
-      "sourceRoot": "projects/alurapic-infra/src",
-      "projectType": "library",
-      "prefix": "ap-infra",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/alurapic-infra/tsconfig.lib.json",
-            "project": "projects/alurapic-infra/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/alurapic-infra/src/test.ts",
-            "tsConfig": "projects/alurapic-infra/tsconfig.spec.json",
-            "karmaConfig": "projects/alurapic-infra/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/alurapic-infra/tsconfig.lib.json",
-              "projects/alurapic-infra/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "alurapic-ui": {
-      "root": "projects/alurapic-ui/",
-      "sourceRoot": "projects/alurapic-ui/src",
+    "alurapic-app": {
+      "root": "projects/alurapic-app/",
+      "sourceRoot": "projects/alurapic-app/src",
       "projectType": "application",
       "prefix": "ap",
       "schematics": {
@@ -87,17 +17,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/alurapic-ui",
-            "index": "projects/alurapic-ui/src/index.html",
-            "main": "projects/alurapic-ui/src/main.ts",
-            "polyfills": "projects/alurapic-ui/src/polyfills.ts",
-            "tsConfig": "projects/alurapic-ui/tsconfig.app.json",
+            "outputPath": "dist/alurapic-app",
+            "index": "projects/alurapic-app/src/index.html",
+            "main": "projects/alurapic-app/src/main.ts",
+            "polyfills": "projects/alurapic-app/src/polyfills.ts",
+            "tsConfig": "projects/alurapic-app/tsconfig.app.json",
             "assets": [
-              "projects/alurapic-ui/src/favicon.ico",
-              "projects/alurapic-ui/src/assets"
+              "projects/alurapic-app/src/favicon.ico",
+              "projects/alurapic-app/src/assets"
             ],
             "styles": [
-              "projects/alurapic-ui/src/styles.scss",
+              "projects/alurapic-app/src/styles.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/font-awesome/css/font-awesome.min.css"
             ],
@@ -107,8 +37,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/alurapic-ui/src/environments/environment.ts",
-                  "with": "projects/alurapic-ui/src/environments/environment.prod.ts"
+                  "replace": "projects/alurapic-app/src/environments/environment.ts",
+                  "with": "projects/alurapic-app/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -133,34 +63,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "alurapic-ui:build"
+            "browserTarget": "alurapic-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "alurapic-ui:build:production"
+              "browserTarget": "alurapic-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "alurapic-ui:build"
+            "browserTarget": "alurapic-app:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/alurapic-ui/src/test.ts",
-            "polyfills": "projects/alurapic-ui/src/polyfills.ts",
-            "tsConfig": "projects/alurapic-ui/tsconfig.spec.json",
-            "karmaConfig": "projects/alurapic-ui/karma.conf.js",
+            "main": "projects/alurapic-app/src/test.ts",
+            "polyfills": "projects/alurapic-app/src/polyfills.ts",
+            "tsConfig": "projects/alurapic-app/tsconfig.spec.json",
+            "karmaConfig": "projects/alurapic-app/karma.conf.js",
             "styles": [
-              "projects/alurapic-ui/src/styles.scss"
+              "projects/alurapic-app/src/styles.scss"
             ],
             "scripts": [],
             "assets": [
-              "projects/alurapic-ui/src/favicon.ico",
-              "projects/alurapic-ui/src/assets"
+              "projects/alurapic-app/src/favicon.ico",
+              "projects/alurapic-app/src/assets"
             ]
           }
         },
@@ -168,8 +98,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/alurapic-ui/tsconfig.app.json",
-              "projects/alurapic-ui/tsconfig.spec.json"
+              "projects/alurapic-app/tsconfig.app.json",
+              "projects/alurapic-app/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -178,27 +108,27 @@
         }
       }
     },
-    "alurapic-ui-e2e": {
-      "root": "projects/alurapic-ui-e2e/",
+    "alurapic-app-e2e": {
+      "root": "projects/alurapic-app-e2e/",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/alurapic-ui-e2e/protractor.conf.js",
-            "devServerTarget": "alurapic-ui:serve"
+            "protractorConfig": "projects/alurapic-app-e2e/protractor.conf.js",
+            "devServerTarget": "alurapic-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "alurapic-ui:serve:production"
+              "devServerTarget": "alurapic-app:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "projects/alurapic-ui-e2e/tsconfig.e2e.json",
+            "tsConfig": "projects/alurapic-app-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
