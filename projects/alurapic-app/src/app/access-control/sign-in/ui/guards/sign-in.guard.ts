@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { LoggedInUserService } from '../../../shared/domain/logged-in-user.service';
+import { SignedInUserService } from '../../../shared/domain/signed-in-user.service';
 
 // TODO: to me, this is not necessary singleton, when transform lazy modules, this sould bue loaded in this module
 @Injectable({
@@ -9,13 +9,13 @@ import { LoggedInUserService } from '../../../shared/domain/logged-in-user.servi
 })
 export class SignInGuard implements CanActivate {
 
-  constructor(private loggedInUserService: LoggedInUserService, private router: Router) { }
+  constructor(private loggedInUserService: SignedInUserService, private router: Router) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    if (this.loggedInUserService.isLogged()) {
+    if (this.loggedInUserService.isSignedIn()) {
       this.router.navigate(['user', this.loggedInUserService.getUserName()]);
       return false;
     }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from '../../access-control/shared/domain/user';
-import { LoggedInUserService } from '../../access-control/shared/domain/logged-in-user.service';
+import { SignedInUserService } from '../../access-control/shared/domain/signed-in-user.service';
 import { SignOutUseCase } from '../../access-control/sign-out/domain/sign-out.use-case';
 
 @Component({
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
   userObservable: Observable<User>;
 
-  constructor(loggedInUserService: LoggedInUserService,
+  constructor(loggedInUserService: SignedInUserService,
     private signOutUseCase: SignOutUseCase,
     private router: Router) {
 

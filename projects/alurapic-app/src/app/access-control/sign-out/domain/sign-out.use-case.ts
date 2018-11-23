@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LoggedInUserService } from '../../shared/domain/logged-in-user.service';
+import { SignedInUserService } from '../../shared/domain/signed-in-user.service';
 
 
 /**
@@ -8,7 +8,7 @@ import { LoggedInUserService } from '../../shared/domain/logged-in-user.service'
 @Injectable()
 export class SignOutUseCase {
 
-  constructor(private loggedInUserService: LoggedInUserService) { }
+  constructor(private loggedInUserService: SignedInUserService) { }
 
   execute() {
     this.loggedInUserService.removeToken();
