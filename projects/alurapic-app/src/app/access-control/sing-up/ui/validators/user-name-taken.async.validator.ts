@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { debounceTime, map, switchMap, first } from 'rxjs/operators';
-import { UserNameIsTakenQuery } from '../../domain/user-name-is-taken.query';
+import { UserNameIsTakenQueryGateway } from '../../domain/user-name-is-taken.query.gateway';
 
 @Injectable()
 export class UserNameTakenAsyncValidator {
 
-    constructor(private userNameIsTakenQuery: UserNameIsTakenQuery) { }
+    constructor(private userNameIsTakenQuery: UserNameIsTakenQueryGateway) { }
 
     checkUserNameTaken() {
 

@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
-import { LogoutUseCase } from '../access-control/sign-out/domain/logout.use-case';
+import { SignOutUseCase } from '../access-control/sign-out/domain/sign-out.use-case';
 
 @NgModule({
   declarations: [HeaderComponent],
-  providers: [LogoutUseCase],
+  providers: [SignOutUseCase],
   imports: [
     CommonModule,
     RouterModule

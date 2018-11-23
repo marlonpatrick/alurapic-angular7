@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ValidationMessageModule } from '../../shared/components/validation-message/validation-message.module';
-import { LoginProcessor } from './domain/login.processor';
-import { LoginUseCase } from './domain/login.use-case';
-import { RestLoginProcessor } from './infra/rest-login.processor';
+import { SignInProcessorGateway } from './domain/sign-in.processor.gateway';
+import { SignInUseCase } from './domain/sign-in.use-case';
+import { RestSignInProcessor } from './infra/rest-sign-in.processor';
 import { SignInPage } from './ui/sign-in.page';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -14,8 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
     declarations: [SignInPage],
 
     providers: [
-        LoginUseCase,
-        { provide: LoginProcessor, useClass: RestLoginProcessor }
+        SignInUseCase,
+        { provide: SignInProcessorGateway, useClass: RestSignInProcessor }
     ],
 
     imports: [

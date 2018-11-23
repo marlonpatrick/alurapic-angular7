@@ -2,12 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { LoginProcessor } from '../domain/login.processor';
+import { SignInProcessorGateway } from '../domain/sign-in.processor.gateway';
 
 const API_BASE_URL = 'http://localhost:3000';
 
 @Injectable()
-export class RestLoginProcessor extends LoginProcessor {
+export class RestSignInProcessor extends SignInProcessorGateway {
 
   constructor(private http: HttpClient) {
     super();

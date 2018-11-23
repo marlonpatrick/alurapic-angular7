@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Photo } from '../../shared/domain/photo';
-import { ListPhotosFromUserQuery } from '../domain/list-photos-from-user.query';
+import { ListPhotosFromUserQueryGateway } from '../domain/list-photos-from-user.query.gateway';
 
 @Component({
   templateUrl: './photo-list.page.html',
@@ -19,7 +19,7 @@ export class PhotoListPage implements OnInit {
 
   userName: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private listPhotosFromUserQuery: ListPhotosFromUserQuery) {
+  constructor(private activatedRoute: ActivatedRoute, private listPhotosFromUserQuery: ListPhotosFromUserQueryGateway) {
   }
 
   ngOnInit(): void {

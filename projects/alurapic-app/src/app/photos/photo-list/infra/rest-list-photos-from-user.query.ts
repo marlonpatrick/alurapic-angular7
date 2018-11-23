@@ -1,13 +1,13 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ListPhotosFromUserQuery } from '../domain/list-photos-from-user.query';
+import { ListPhotosFromUserQueryGateway } from '../domain/list-photos-from-user.query.gateway';
 import { Photo } from '../../shared/domain/photo';
 
 const API_BASE_URL = 'http://localhost:3000';
 
 @Injectable()
-export class RestListPhotosFromUserQuery extends ListPhotosFromUserQuery {
+export class RestListPhotosFromUserQuery extends ListPhotosFromUserQueryGateway {
 
     constructor(private http: HttpClient) {
         super();

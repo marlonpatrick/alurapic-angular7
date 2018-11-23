@@ -6,7 +6,7 @@ import { LoggedInUserService } from '../../shared/domain/logged-in-user.service'
  * TODO: singleton? it's only used in header, then, perhaps could be singleton, therefore could be used in others parts as app evolve.
  */
 @Injectable()
-export class LogoutUseCase {
+export class SignOutUseCase {
 
   constructor(private loggedInUserService: LoggedInUserService) { }
 

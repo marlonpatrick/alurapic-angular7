@@ -4,7 +4,7 @@
         <div *ngIf="(userObservable | async) as user; else notLoggedIn">
             <i class="fa fa-user-circle mr-1"></i>
             <a class="mr-1"> {{user.name}}</a>
-            <a (click)="logout()"> (Logout)</a>
+            <a (click)="signOut()"> (Logout)</a>
         </div>
 
         <ng-template #notLoggedIn>

@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PlatformDetectorService } from '../../../core/platform-detector/platform-detector.service';
-import { LoginUseCase } from '../domain/login.use-case';
+import { SignInUseCase } from '../domain/sign-in.use-case';
 
 @Component({
   templateUrl: './sign-in.page.html',
@@ -10,25 +10,25 @@ import { LoginUseCase } from '../domain/login.use-case';
 })
 export class SignInPage implements OnInit {
 
-  loginForm: FormGroup;
+  pageForm: FormGroup;
 
   @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement>;
 
-  constructor(private formBuilder: FormBuilder, private loginUseCase: LoginUseCase,
+  constructor(private formBuilder: FormBuilder, private signInUseCase: SignInUseCase,
     private router: Router, private platformDetectorService: PlatformDetectorService) { }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
+    this.pageForm = this.formBuilder.group({
       userName: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
-  login() {
-    const userName = this.loginForm.get('userName').value;
-    const password = this.loginForm.get('password').value;
+  signIn() {
+    const userName = this.pageForm.get('userName').value;
+    const password = this.pageForm.get('password').value;
 
-    this.loginUseCase.execute(userName, password)
+    this.signInUseCase.execute(userName, password)
       .subscribe(
         () => this.router.navigate(['user', userName]),
         err => {
@@ -38,7 +38,7 @@ export class SignInPage implements OnInit {
             this.userNameInput.nativeElement.focus();
           }
 
-          this.loginForm.reset();
+          this.pageForm.reset();
         }
       );
   }
