@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { userNameValidator } from './validators/user-name.validator';
 import { UserNameTakenAsyncValidator } from './validators/user-name-taken.async.validator';
 import { NewUser } from '../domain/new-user';
 import { SignUpUseCase } from '../domain/sign-up.use-case';
 import { Router } from '@angular/router';
+import { PlatformDetectorService } from '../../../core/platform-detector/platform-detector.service';
 
 @Component({
   templateUrl: './sign-up.page.html',
@@ -14,14 +15,24 @@ export class SignUpPage implements OnInit {
 
   pageForm: FormGroup;
 
+  @ViewChild('emailInput') emailInput: ElementRef<HTMLInputElement>;
+
   constructor(private formBuilder: FormBuilder,
     private userNameTakenAsyncValidator: UserNameTakenAsyncValidator,
     private signUpUseCase: SignUpUseCase,
-    private router: Router) { }
+    private router: Router,
+    private platformDetectorService: PlatformDetectorService) { }
 
   ngOnInit() {
+    this.pageForm = this.buildPageForm();
 
-    this.pageForm = this.formBuilder.group({
+    if (this.platformDetectorService.isPlatformBrowser()) {
+      this.emailInput.nativeElement.focus();
+    }
+  }
+
+  private buildPageForm() {
+    return this.formBuilder.group({
       email: ['',
         [
           Validators.required,

@@ -18,7 +18,15 @@ export class SignInPage implements OnInit {
     private router: Router, private platformDetectorService: PlatformDetectorService) { }
 
   ngOnInit() {
-    this.pageForm = this.formBuilder.group({
+    this.pageForm = this.buildPageForm();
+
+    if (this.platformDetectorService.isPlatformBrowser()) {
+      this.userNameInput.nativeElement.focus();
+    }
+  }
+
+  private buildPageForm() {
+    return this.formBuilder.group({
       userName: ['', Validators.required],
       password: ['', Validators.required]
     });
