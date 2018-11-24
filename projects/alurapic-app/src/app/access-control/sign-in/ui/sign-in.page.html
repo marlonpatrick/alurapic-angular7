@@ -8,7 +8,7 @@
             class="form-control" 
             placeholder="user name" 
             autofocus/> 
-        <ap-val-msg *ngIf="pageForm.hasError('required', 'userName')" text="User name is required."></ap-val-msg>
+        <ap-val-msg *ngIf="pageForm.hasError('required', ['userName'])" text="User name is required."></ap-val-msg>
     </div>
 
     <div class="form-group">
@@ -16,7 +16,7 @@
             type="password" 
             class="form-control" 
             placeholder="password"/>              
-        <ap-val-msg *ngIf="pageForm.hasError('required', 'password')" text="Password is required."></ap-val-msg>
+        <ap-val-msg *ngIf="pageForm.hasError('required', ['password'])" text="Password is required."></ap-val-msg>
     </div>
 
     <button 
