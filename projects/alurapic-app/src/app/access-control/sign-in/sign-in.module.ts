@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -7,8 +8,6 @@ import { SignInProcessorGateway } from './domain/sign-in.processor.gateway';
 import { SignInUseCase } from './domain/sign-in.use-case';
 import { RestSignInProcessor } from './infra/rest-sign-in.processor';
 import { SignInPage } from './ui/sign-in.page';
-import { HttpClientModule } from '@angular/common/http';
-import { AccessControlSharedModule } from '../shared/access-control-shared.module';
 
 
 @NgModule({
@@ -24,8 +23,7 @@ import { AccessControlSharedModule } from '../shared/access-control-shared.modul
         HttpClientModule,
         ReactiveFormsModule,
         RouterModule,
-        ValidationMessageModule,
-        AccessControlSharedModule
+        ValidationMessageModule
     ]
 })
 export class SignInModule { }

@@ -9,14 +9,14 @@ import { SignedInUserService } from '../../domain/signed-in-user.service';
 })
 export class SignedInUserGuard implements CanActivate {
 
-  constructor(private loggedInUserService: SignedInUserService, private router: Router) { }
+  constructor(private signedInUserService: SignedInUserService, private router: Router) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    if (this.loggedInUserService.isSignedIn()) {
-      this.router.navigate(['user', this.loggedInUserService.getUserName()]);
+    if (this.signedInUserService.isSignedIn()) {
+      this.router.navigate(['user', this.signedInUserService.getUserName()]);
       return false;
     }
 

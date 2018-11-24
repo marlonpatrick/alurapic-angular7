@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccessControlHomePage } from './home/ui/access-control-home.page';
 import { SignInPage } from './sign-in/ui/sign-in.page';
+import { SignedInUserGuard } from './signed-in-user/ui/guards/signed-in-user.guard';
 import { SignUpPage } from './sing-up/ui/sign-up.page';
-import { SignedInUserGuard } from './shared/ui/guards/signed-in-user.guard';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
     component: AccessControlHomePage,
     canActivate: [SignedInUserGuard],
     children: [
-      {path: '', redirectTo: 'sign-in', pathMatch: 'full'},
+      { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
       { path: 'sign-in', component: SignInPage },
       { path: 'sign-up', component: SignUpPage }
     ]

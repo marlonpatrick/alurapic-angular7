@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { ErrorsModule } from './errors/errors.module';
 import { PhotosModule } from './photos/photos.module';
+import { SignedInUserModule } from './access-control/signed-in-user/signed-in-user.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { PhotosModule } from './photos/photos.module';
   ],
   imports: [
     BrowserModule,
+    SignedInUserModule,
     CoreModule,
     ErrorsModule,
     PhotosModule,
