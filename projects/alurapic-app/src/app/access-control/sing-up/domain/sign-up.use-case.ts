@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SignedInUserService } from '../../shared/domain/signed-in-user.service';
 import { NewUser } from './new-user';
 import { SignUpProcessorGateway } from './sign-up.processor.gateway';
 
@@ -8,7 +7,7 @@ import { SignUpProcessorGateway } from './sign-up.processor.gateway';
 @Injectable()
 export class SignUpUseCase {
 
-  constructor(private signUpProcessor: SignUpProcessorGateway, private loggedInUserService: SignedInUserService) { }
+  constructor(private signUpProcessor: SignUpProcessorGateway) { }
 
   execute(newUser: NewUser): Observable<Object> {
 

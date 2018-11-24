@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
-import { TokenService } from './shared/domain/token.service';
-import { LocalStorageTokenService } from './shared/infra/local-storage-token.service';
+import { AccessControlRoutingModule } from './access-control-routing.module';
+import { AccessControlHomeModule } from './home/access-control-home.module';
 import { SignInModule } from './sign-in/sign-in.module';
 import { SignUpModule } from './sing-up/sign-up.module';
-import { AccessControlHomeModule } from './home/home.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-
-  providers: [
-    { provide: TokenService, useClass: LocalStorageTokenService }
-  ],
-
   imports: [
     AccessControlHomeModule,
     SignInModule,
-    SignUpModule
+    SignUpModule,
+    AccessControlRoutingModule
   ]
 })
 export class AccessControlModule { }

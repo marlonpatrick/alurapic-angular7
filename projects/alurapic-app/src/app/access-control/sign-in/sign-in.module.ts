@@ -8,6 +8,7 @@ import { SignInUseCase } from './domain/sign-in.use-case';
 import { RestSignInProcessor } from './infra/rest-sign-in.processor';
 import { SignInPage } from './ui/sign-in.page';
 import { HttpClientModule } from '@angular/common/http';
+import { AccessControlSharedModule } from '../shared/access-control-shared.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
         HttpClientModule,
         ReactiveFormsModule,
         RouterModule,
-        ValidationMessageModule
+        ValidationMessageModule,
+        AccessControlSharedModule
     ]
 })
 export class SignInModule { }

@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccessControlHomePage } from './home.page';
+import { AccessControlHomePage } from './access-control-home.page';
 
 describe('HomeComponent', () => {
   let component: AccessControlHomePage;

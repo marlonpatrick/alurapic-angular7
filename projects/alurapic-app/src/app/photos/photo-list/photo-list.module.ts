@@ -10,6 +10,7 @@ import { PhotoListPage } from './ui/photo-list.page';
 import { PhotoComponent } from './ui/components/photo/photo.component';
 import { PhotosComponent } from './ui/components/photos/photos.component';
 import { FilterPhotosByDescriptionPipe } from './ui/pipes/filter-photos-by-description.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FilterPhotosByDescriptionPipe } from './ui/pipes/filter-photos-by-descr
 
     imports: [
         CommonModule,
+        HttpClientModule,
         LoadButtonModule,
         CardModule,
         SearchModule,
